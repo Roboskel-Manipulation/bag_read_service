@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="bag_file"/>
+	<node pkg="bag_read_service" type="readBagService.py" name="BagServer" output="screen" required="true" args="$(arg bag_file)">
+	</node>
+
+	<node pkg="bag_read_service" type="clientBag.py" name="BagClient" output="screen">
+		 <param name="listen_topic" value="/keypoint_3d_matching" />	 
+	</node>
+
+	
+	
+</launch>
